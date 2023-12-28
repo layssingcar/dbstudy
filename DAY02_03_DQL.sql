@@ -87,6 +87,19 @@ WHERE POSITION IN ('사원', '과장');
         3) 마지막 글자가 A인 모든 데이터: A%
         4) A를 포함하는 모든 데이터: %A%
     
-    LIKE 연산자
-    와일드 카드를 이용해 조회할 때 사용하는 연산자
+    LIKE 연산자: 와일드 카드를 이용해 조회할 때 사용하는 연산자
 */
+
+-- 9. 사원 테이블에서 '한'씨 조회
+SELECT * 
+FROM EMPLOYEE_T 
+WHERE NAME LIKE '한%';
+
+-- 10. 사원 테이블에서 9월에 입사한 사원 보회
+SELECT * 
+FROM EMPLOYEE_T
+WHERE HIRE_DATE LIKE '%/09/%';
+
+SELECT * 
+FROM EMPLOYEE_T
+WHERE TO_CHAR(HIRE_DATE, 'MM') = 9;
